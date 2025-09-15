@@ -3,7 +3,7 @@ import { BiToggleLeft, BiToggleRight } from "react-icons/bi";
 const TabChange = ({ icon, title, tab, setTab }) => (
   <div
     className={`${
-      tab ? "text-gray-900" : "text-gray-300"
+      tab ? "text-gray-900" : "text-gray-500"
     } flex items-center justify-between px-2 `}
   >
     <div className="flex gap-1 items-center">

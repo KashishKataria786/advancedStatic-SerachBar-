@@ -1,7 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
 import './App.css';
-import { CiSearch } from "react-icons/ci";
-import { IoIosSettings } from "react-icons/io";
 import { GrAttachment } from "react-icons/gr";
 import { GoPerson } from "react-icons/go";
 import { PiChatsCircle } from 'react-icons/pi';
@@ -12,6 +10,7 @@ import TabChange from './components/TabChange.jsx';
 import LoadingCard from './components/LoadingCard.jsx';
 import Spinner from './components/Spinner.jsx';
 import { IoSearch } from 'react-icons/io5';
+import { RiSettings2Line } from 'react-icons/ri';
 
 function App() {
   const [openSearchBox, setOpenSearchBox] = useState(true);
@@ -74,15 +73,22 @@ function App() {
               onChange={(e) => setSearch(e.target.value)}
             />
           </div>
-          <h4
+          {
+            !loading&&search?<> <h4
             onClick={() => {
               setSearch("");
               setOpenSearchBox(false);
+              setLoading(false)
             }}
             className="font-semibold underline cursor-pointer"
           >
             Clear
-          </h4>
+          </h4></>:<><div className='flex gap-3 items-center'>
+            <p className='px-2 border rounded-md'>S</p>
+            <span>Quick Access</span>
+          </div></>
+          }
+         
         </div>
 
 <div className={`${openSearchBox ? "transition-all duration-800":""}:`}>
@@ -105,7 +111,7 @@ function App() {
                   className={` p-2 rounded ${openShortDialog ? "bg-gray-100" : "bg-white"}`}
                   onClick={() => setOpenShortDialog(!openShortDialog)}
                 >
-                  <IoIosSettings
+                  <RiSettings2Line
                     size={30}
                     className={`transition-transform duration-300 ${openShortDialog ? "rotate-90" : "rotate-0"}`}
                   />
