@@ -26,11 +26,11 @@ function App() {
   const dropdownRef = useRef(null);
 
   const fakedata = [
-    { name: "Alice", label: "Active 1w Ago", pic: "https://th.bing.com/th/id/OIP.IrUBHhdMo6wWLFueKNreRwHaHa?o=7&rm=3&rs=1&pid=ImgDetMain" },
-    { name: "Albert", label: "UnActivated", pic: "https://tse1.mm.bing.net/th/id/OIP.QjynegEfQVPq5kIEuX9fWQHaFj?rs=1&pid=ImgDetMain&o=7&rm=3" },
-    { name: "Mominique", label: "Active 1w Ago", pic: "https://th.bing.com/th/id/OIP.IrUBHhdMo6wWLFueKNreRwHaHa?o=7&rm=3&rs=1&pid=ImgDetMain" },
-    { name: "Presentation", label: "In Presentation", pic: "https://www.notsalmon.com/wp-content/uploads/2011/11/shutterstock_569345803.jpg" },
-    { name: "Graphy", label: "Active 1w Ago", pic: "https://th.bing.com/th/id/OIP.IrUBHhdMo6wWLFueKNreRwHaHa?o=7&rm=3&rs=1&pid=ImgDetMain" },
+    { name: "Alice", label: "Active 1w Ago", pic: "https://th.bing.com/th/id/OIP.IrUBHhdMo6wWLFueKNreRwHaHa?o=7&rm=3&rs=1&pid=ImgDetMain" ,online:false},
+    { name: "Albert", label: "UnActivated", pic: "https://tse1.mm.bing.net/th/id/OIP.QjynegEfQVPq5kIEuX9fWQHaFj?rs=1&pid=ImgDetMain&o=7&rm=3" ,online:true},
+    { name: "Mominique", label: "Active 1w Ago", pic: "https://th.bing.com/th/id/OIP.IrUBHhdMo6wWLFueKNreRwHaHa?o=7&rm=3&rs=1&pid=ImgDetMain" ,online:false},
+    { name: "Presentation", label: "In Presentation", pic: "https://www.notsalmon.com/wp-content/uploads/2011/11/shutterstock_569345803.jpg" ,online:true},
+    { name: "Graphy", label: "Active 1w Ago", pic: "https://th.bing.com/th/id/OIP.IrUBHhdMo6wWLFueKNreRwHaHa?o=7&rm=3&rs=1&pid=ImgDetMain" ,online:true},
   ];
 
   useEffect(() => {
@@ -91,12 +91,12 @@ function App() {
          
         </div>
 
-<div className={`${openSearchBox ? "transition-all duration-800":""}:`}>
+<div className={`transition-transform duration-500 ${openSearchBox ? "translate-y-2 opacity-1000":"translate-y-0 opacity-0"}:`}>
   
         {openSearchBox && (
           <>
   
-            <div className="transition-all duration-500 px-5 pt-3 border-b border-gray-300 flex items-center justify-between">
+            <div className="transition-all duration-100 px-5 pt-3 border-b border-gray-300 flex items-center justify-between">
               <div className="flex items-start gap-2 flex-wrap">
                 <CustomButton title="All" num={data.length} />
                 {showFiles && <CustomButton title="Files" num={3} icon={<GrAttachment />} />}
@@ -142,6 +142,7 @@ function App() {
                       name={item.name}
                       label={item.label}
                       pic={item.pic}
+                      online= {item.online}
                     />
                   ))
                 ) : (
@@ -151,9 +152,10 @@ function App() {
             </div>
           </>
         )}
-      </div>
+    
 </div>
     </div>
+     </div>
   );
 }
 
