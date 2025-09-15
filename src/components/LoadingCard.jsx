@@ -2,7 +2,7 @@ import React from 'react'
 
 const LoadingCard = () => {
   return (
-    <div className="p-3 flex rounded-xl items-center bg-gray-100 gap-4 border-b-1 border-gray-200 mx-4 my-1 ">
+    <div className="py-4 flex items-center gap-4 border-b border-gray-300 px-6  bg-gray-100">
         <div>
             <img className="h-[50px] w-[40px] rounded-xl bg-gray-400 animate-pulse" src=""/>
         </div>
