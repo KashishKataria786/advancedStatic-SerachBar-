@@ -10,6 +10,8 @@ import { CustomButton } from './components/CustomButton.jsx';
 import Card from './components/card.jsx';
 import TabChange from './components/TabChange.jsx';
 import LoadingCard from './components/LoadingCard.jsx';
+import Spinner from './components/Spinner.jsx';
+import { IoSearch } from 'react-icons/io5';
 
 function App() {
   const [openSearchBox, setOpenSearchBox] = useState(true);
@@ -26,9 +28,9 @@ function App() {
 
   const fakedata = [
     { name: "Alice", label: "Active 1w Ago", pic: "https://th.bing.com/th/id/OIP.IrUBHhdMo6wWLFueKNreRwHaHa?o=7&rm=3&rs=1&pid=ImgDetMain" },
-    { name: "Albert", label: "UnActivated", pic: "https://th.bing.com/th/id/OIP.IrUBHhdMo6wWLFueKNreRwHaHa?o=7&rm=3&rs=1&pid=ImgDetMain" },
+    { name: "Albert", label: "UnActivated", pic: "https://tse1.mm.bing.net/th/id/OIP.QjynegEfQVPq5kIEuX9fWQHaFj?rs=1&pid=ImgDetMain&o=7&rm=3" },
     { name: "Mominique", label: "Active 1w Ago", pic: "https://th.bing.com/th/id/OIP.IrUBHhdMo6wWLFueKNreRwHaHa?o=7&rm=3&rs=1&pid=ImgDetMain" },
-    { name: "Presentation", label: "In Presentation", pic: "https://th.bing.com/th/id/OIP.IrUBHhdMo6wWLFueKNreRwHaHa?o=7&rm=3&rs=1&pid=ImgDetMain" },
+    { name: "Presentation", label: "In Presentation", pic: "https://www.notsalmon.com/wp-content/uploads/2011/11/shutterstock_569345803.jpg" },
     { name: "Graphy", label: "Active 1w Ago", pic: "https://th.bing.com/th/id/OIP.IrUBHhdMo6wWLFueKNreRwHaHa?o=7&rm=3&rs=1&pid=ImgDetMain" },
   ];
 
@@ -54,19 +56,21 @@ function App() {
   }, [search]);
 
 
+
   return (
     <div className="min-h-screen flex flex-col items-center justify-center ">
-      <h6 className='text-sm font-gray-400 py-3 text-left'>Eg:Try Searching "Alice"</h6>
+      <h6 className='text-sm font-gray-400 py-3 text-left'>Eg:Try Searching "Al" or "Alice"</h6>
       <div className="w-[43vw] border border-gray-200 rounded-3xl bg-white shadow-md">
 
         <div className="flex items-center justify-between p-6">
           <div className="flex items-center gap-5">
-            <CiSearch size={30} />
+            {loading?<Spinner/>:<IoSearch size={30} />}
+            
             <input
               type="search"
-              placeholder="Search"
+              placeholder="Something is easier"
               value={search}
-              className="outline-none text-xl font-semibold text-gray-700"
+              className="outline-none input-no-x text-xl font- text-gray-700"
               onChange={(e) => setSearch(e.target.value)}
             />
           </div>
