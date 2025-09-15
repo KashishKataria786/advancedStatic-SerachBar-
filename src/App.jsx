@@ -123,7 +123,7 @@ function App() {
               </div>
             </div>
 
-            <div className="space-y-1 p-4">
+            <div className="space-y-1 ">
               {loading ? (
                 [1, 2, 3, 4, 5].map((item) => (
                   <LoadingCard/>
