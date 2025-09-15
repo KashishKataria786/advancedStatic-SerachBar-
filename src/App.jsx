@@ -23,9 +23,6 @@ function App() {
   const [data, setData] = useState([]);
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(false);
-
-  const dropdownRef = useRef(null);
-
  const fakedata = [
   { name: "Albert", label: "UnActivated", pic: "https://tse1.mm.bing.net/th/id/OIP.QjynegEfQVPq5kIEuX9fWQHaFj?rs=1&pid=ImgDetMain&o=7&rm=3", online: true },
   { name: "Alice", label: "Active 1w Ago", pic: "https://th.bing.com/th/id/OIP.IrUBHhdMo6wWLFueKNreRwHaHa?o=7&rm=3&rs=1&pid=ImgDetMain", online: false },
@@ -83,7 +80,7 @@ function App() {
 <div className="min-h-screen flex flex-col text-left justify-start ">
   <h2 className='text-3xl  my-5 font-semibold '>Advanced Search Bar with Static Data</h2>
       <h6 className='text-sm font-gray-400 py-3 text-left'>Eg:Try Searching "Al" or "Alice"</h6>
-      <div className="md:w-[42vw] border border-gray-200 rounded-3xl bg-white shadow-md">
+      <div className="md:w-[43vw] border border-gray-200 rounded-3xl bg-white shadow-md">
 
         <div className="flex items-center justify-between p-6">
           <div className="flex items-center gap-5">
